@@ -1,0 +1,152 @@
+{
+  "accumulated_episodes": 4,
+  "action_selector": "multinomial",
+  "agent": "n_rnn",
+  "agent_output_type": "pi_logits",
+  "batch_size": 32,
+  "batch_size_run": 8,
+  "buffer_cpu_only": true,
+  "buffer_size": 32,
+  "checkpoint_path": "",
+  "cosim_checkpoint": "./results/models/qmix_env=8_adam_td_lambda__2023-04-17_17-06-37",
+  "critic_coef": 0.5,
+  "critic_lr": 0.0005,
+  "entropy": 0.01,
+  "env": "SUMO_intersection_random",
+  "env_args": {
+    "CAVs_id_list": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "accel_distance_threshold": 3,
+    "acceleration_resolution_pattern_1": [
+      1.5,
+      2.5,
+      3.5
+    ],
+    "acceleration_resolution_pattern_2": [
+      0.3,
+      2.5,
+      3.5
+    ],
+    "action_pattern": 2,
+    "comm_lag": 0,
+    "comm_lag_curricula": [
+      0.0,
+      2.0
+    ],
+    "decision_freq": 5,
+    "depart_speed": 3,
+    "discrete": true,
+    "episode_limit": 500,
+    "intention_matrix": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0
+      ]
+    ],
+    "intention_probs": [
+      1.0,
+      0.0
+    ],
+    "map_name": "SUMO_intersection_random",
+    "max_reward": 10,
+    "min_reward": -10,
+    "multiprocess": true,
+    "n_agents": 8,
+    "random_behavior": true,
+    "render": false,
+    "run_curricula": false,
+    "signal_cycle_length": 4.0,
+    "spawn_speed_range": [
+      3.0,
+      5.0
+    ],
+    "time_step": 0.2,
+    "time_step_for_render": 0.05,
+    "total_agents": 8,
+    "use_random_speed": true,
+    "use_virtual_signal": true
+  },
+  "eps_clip": 0.2,
+  "epsilon_anneal_time": 100000,
+  "epsilon_finish": 0.0,
+  "epsilon_start": 0.0,
+  "evaluate": false,
+  "gae_lambda": 0.95,
+  "gain": 0.01,
+  "gamma": 0.99,
+  "gamma_lr": 0.997,
+  "grad_norm_clip": 10,
+  "label": "default_label",
+  "learner": "ppo_learner_lr_decay",
+  "learner_log_interval": 1000,
+  "load_step": 0,
+  "local_results_path": "results",
+  "log_interval": 1000,
+  "lr": 0.0005,
+  "mac": "basic_mac",
+  "mask_before_softmax": true,
+  "max_return": -1000,
+  "mini_epochs": 5,
+  "name": "ippo_env=8_adam_gae",
+  "obs_agent_id": true,
+  "obs_last_action": false,
+  "optim_alpha": 0.99,
+  "optim_eps": 1e-05,
+  "repeat_id": 1,
+  "rnn_hidden_dim": 64,
+  "run": "default",
+  "runner": "parallel",
+  "runner_log_interval": 1000,
+  "save_model": true,
+  "save_model_interval": 250000,
+  "save_probs": true,
+  "save_replay": false,
+  "seed": 42,
+  "t_max": 2000000,
+  "temp_checkpoint": "./results/models/qmix_env=8_adam_td_lambda__2023-03-28_10-51-34",
+  "test_greedy": true,
+  "test_interval": 1000,
+  "test_nepisode": 5,
+  "use_cuda": true,
+  "use_curricula": false,
+  "use_layer_norm": true,
+  "use_orthogonal": true,
+  "use_tensorboard": false,
+  "use_value_norm": true
+}
