@@ -1,0 +1,48 @@
+<routes>
+
+<!--        <vType id="VehicleA" accel="3.5" decel="5.0" sigma="0" length="5" maxSpeed="15.0" speedFactor="1.0" minGap="1.0"-->
+<!--        guiShape="passenger" speedDev="0" tau="0.1"/>-->
+        <vType id="VehicleA" accel="3.5" decel="5.0" sigma="0" length="5" maxSpeed="15.0" minGap="4.5"
+        guiShape="passenger"/>
+        
+
+        <route id="route_WE" edges="L6 L3" />
+        <route id="route_WN" edges="L6 L1" />
+		<route id="route_WS" edges="L6 L5" />
+
+        <route id="route_EW" edges="L2 L7" />
+        <route id="route_ES" edges="L2 L5" />
+        <route id="route_EN" edges="L2 L1" />
+
+
+        <route id="route_NE" edges="L0 L3" />
+        <route id="route_NS" edges="L0 L5" />
+        <route id="route_NW" edges="L0 L7" />
+		
+        <route id="route_SW" edges="L4 L7" />
+        <route id="route_SN" edges="L4 L1" />
+        <route id="route_SE" edges="L4 L3" />
+        
+
+		<!--<vehicle id="0" type="VehicleA" route="route_NS" depart="0" departLane="best"/>
+		<vehicle id="1" type="VehicleA" route="route_NW" depart="0" departLane="best"/>
+		<vehicle id="2" type="VehicleA" route="route_WE" depart="0" departLane="best"/>
+		<vehicle id="3" type="VehicleA" route="route_WS" depart="0" departLane="best"/>
+		<vehicle id="4" type="VehicleA" route="route_SN" depart="0" departLane="best"/>
+		<vehicle id="5" type="VehicleA" route="route_SE" depart="0" departLane="best"/>
+		<vehicle id="6" type="VehicleA" route="route_EW" depart="0" departLane="best"/>
+		<vehicle id="7" type="VehicleA" route="route_EN" depart="0" departLane="best"/>-->
+
+        
+        <flow id="type1" type="VehicleA" begin="0" end="7200" route="route_WE" vehsPerHour="300" departLane="0" departSpeed="5" departPos="base"/>
+        <flow id="type2" type="VehicleA" begin="0" end="7200" route="route_WN" vehsPerHour="300" departLane="1" departSpeed="5" departPos="base"/>
+
+        <flow id="type3" type="VehicleA" begin="0" end="7200" route="route_EW" vehsPerHour="300" departLane="0" departSpeed="5" departPos="base"/>
+        <flow id="type4" type="VehicleA" begin="0" end="7200" route="route_ES" vehsPerHour="300" departLane="1" departSpeed="5" departPos="base"/>
+
+        <flow id="type5" type="VehicleA" begin="0" end="7200" route="route_NE" vehsPerHour="300" departLane="1" departSpeed="5" departPos="base"/>
+        <flow id="type6" type="VehicleA" begin="0" end="7200" route="route_NS" vehsPerHour="300" departLane="0" departSpeed="5" departPos="base"/>
+
+        <flow id="type7" type="VehicleA" begin="0" end="7200" route="route_SW" vehsPerHour="300" departLane="1" departSpeed="5" departPos="base"/>
+        <flow id="type8" type="VehicleA" begin="0" end="7200" route="route_SN" vehsPerHour="300" departLane="0" departSpeed="5" departPos="base"/>
+</routes>

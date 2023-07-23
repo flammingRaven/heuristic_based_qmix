@@ -1,0 +1,50 @@
+env: SUMO_intersection_random
+test_greedy: True
+test_nepisode: 1 # 5 for training phase, 1 for evaluation
+test_interval: 1000
+log_interval: 1000
+runner_log_interval: 1000
+learner_log_interval: 1000
+t_max: 2000000
+
+obs_last_action: False
+
+env_args:
+  map_name: SUMO_intersection_random
+  multiprocess: False # if use parallel runner
+  run_curricula:  False
+  random_behavior: True
+  comm_lag: 0 # 0, 3
+  render: True
+  n_agents: 8
+  total_agents: 8
+  discrete: True
+#  action_discretization: 6
+  episode_limit: 500 # 200 for time_step 0.5, 500 for time_step 0.2
+  depart_speed: 3
+  time_step: 0.2
+  decision_freq: 5
+  signal_cycle_length: 4.0 # 4.0 for decision_freq 2hz
+  time_step_for_render: 0.05
+  action_pattern: 2 # 1 for [accel, keep_speed, decel], 2 for [wait, drive_slow, drive_quick]
+  acceleration_resolution_pattern_1: [1.5, 2.5, 3.5]
+  acceleration_resolution_pattern_2: [0.3, 2.5, 3.5]
+  CAVs_id_list: ['0', '1', '2', '3', '4', '5', '6', '7'] #['5', '7', '1', '3', '4', '6', '2', '0']
+  min_reward: -10
+  max_reward: 10
+  intention_probs: [0.7, 0.3] # [1.0, 0.0], [0.7, 0.3], [0.0, 1.0]
+  intention_matrix: [[1.0, 0.0], # "0"
+                     [1.0, 0.0], # "1"
+                     [1.0, 0.0], # "2"
+                     [1.0, 0.0], # "3"
+                     [1.0, 0.0], # "4"
+                     [1.0, 0.0], # "5"
+                     [1.0, 0.0], # "6"
+                     [1.0, 0.0]] # "7"
+  comm_lag_curricula: [0.0, 2.0]
+  use_virtual_signal: True # True, False
+  accel_distance_threshold: 3
+  spawn_speed_range: [3.0, 5.0] # [5.0, 7.0]
+  use_random_speed: True
+  use_ppo: False # False for QMIX
+  max_speed: 15

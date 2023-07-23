@@ -1,0 +1,60 @@
+# --- Defaults ---
+
+# --- pymarl options ---
+runner: "episode" # Runs 1 env for an episode
+mac: "basic_mac" # Basic controller
+env: "sc2" # Environment name
+env_args: {} # Arguments for the environment
+batch_size_run: 1 # Number of environments to run in parallel
+test_nepisode: 1 # Number of episodes to test for
+test_interval: 2000 # Test after {} timesteps have passed
+test_greedy: True # Use greedy evaluation (if False, will set epsilon floor to 0
+log_interval: 2000 # Log summary of stats after every {} timesteps
+runner_log_interval: 2000 # Log runner stats (not test stats) every {} timesteps
+learner_log_interval: 2000 # Log training stats every {} timesteps
+t_max: 2000000 # Stop running after this many timesteps
+use_cuda: True # Use gpu by default unless it isn't available
+buffer_cpu_only: True # If true we won't keep all of the replay buffer in vram
+seed: 42 # 42, 84, 360，    630
+use_curricula: False
+# --- Logging options ---
+use_tensorboard: False # Log results to tensorboard
+save_model: True # Save the models to disk
+max_return: -1000
+save_model_interval: 250000 # Save models after this many timesteps
+# Load a checkpoint from this path
+#checkpoint_path: "" # for training from the beginning
+#checkpoint_path: "../data/fixed_route_qmix_WITH_action_mask/model/" # for H-QMIX in fixed route scenario
+#checkpoint_path: "../data/fixed_route_ippo_WITH_action_mask/model/" # for IPPO in fixed route scenario
+#checkpoint_path: "../data/fixed_route_qmix_no_action_mask/model/" # for pure QMIX in fixed route scenario
+#checkpoint_path: "../data/random_route_ippo_no_curriculum/model/" # for IPPO in random route scenario
+checkpoint_path: "../data/random_route_qmix_no_curriculum/model/" # for H-QMIX in random route scenario
+save_path: "/home/ghz/PycharmProjects/heuristic_based_qmix/data/plots"
+scenario: "fixed_route" # "random_route"
+
+evaluate: True #True # Evaluate model for test_nepisode episodes and quit (no training)
+load_step: 0 # Load model trained on this many timesteps (0 if choose max possible)
+save_replay: False # Saving the replay of the model loaded from checkpoint_path
+local_results_path: "results" # Path for local results
+
+# --- RL hyperparameters ---
+gamma: 0.99
+batch_size: 128 # Number of episodes to train on
+buffer_size: 5000 # Size of the replay buffer
+lr: 0.0005 # Learning rate for agents
+critic_lr: 0.0005 # Learning rate for critics
+optim_alpha: 0.99 # RMSProp alpha
+optim_eps: 0.00001 # RMSProp epsilon
+grad_norm_clip: 10 # Reduce magnitude of gradients above this L2 norm
+
+# --- Agent parameters ---
+agent: "rnn" # Default rnn agent
+rnn_hidden_dim: 64 # Size of hidden state for default rnn agent
+obs_agent_id: True # Include the agent's one_hot id in the observation
+obs_last_action: True # Include the agent's last action (one_hot) in the observation
+
+# --- Experiment running params ---
+repeat_id: 1
+label: "default_label"
+
+run: "evaluate" # "default", "evaluate"
